@@ -32,7 +32,7 @@ function ask() {
             message: "Enter ID of the product you would like to purchase."
         }
     ]).then(function (answer) {
-        console.log(answer.ID);
+        // console.log(answer.ID);
         var item = connection.query('SELECT * FROM products WHERE item_id= ?', [answer.ID], function (err, res) {
             if (err) throw err;
             console.table(res);
@@ -50,8 +50,17 @@ function quantity(res) {
             message: "Enter desired quantity"
         }
     ]).then (function(answer){
-        console.log(answer.QTY);
-
+        // console.log(answer.QTY);
+        if (answer.QTY <= res [0].stock_quantity){
+            var total = res[0].stock_quantity - answer.QTY;
+            console.log ("Thank you! Your order total is: $" + (answer.QTY * res[0].price))
+        }
+        else {
+            console.log("Insufficient quantity")
+            displayProducts();
+            return;
+        }
+        connection.query("")
     })
 }
 
