@@ -30,3 +30,11 @@ Once the update goes through, show the customer the total cost of their purchase
 
 ## Images
 
+https://user-images.githubusercontent.com/50177334/61595930-c8a87880-abc2-11e9-891f-2953f91f4d92.png
+
+https://user-images.githubusercontent.com/50177334/61595941-fdb4cb00-abc2-11e9-9259-6d59a4d2c078.png
+
+https://user-images.githubusercontent.com/50177334/61595941-fdb4cb00-abc2-11e9-9259-6d59a4d2c078.png
+
+https://user-images.githubusercontent.com/50177334/61595980-55ebcd00-abc3-11e9-850a-dc4b541e935f.png
+
