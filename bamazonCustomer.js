@@ -9,36 +9,49 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
-connection.connect (function (err){
+connection.connect(function (err) {
     if (err) throw err;
     console.log("Connected")
-    displayProducts ();
+    displayProducts();
 });
 
 //show all products
-function displayProducts () {
-    connection.query("SELECT * FROM products", function(err, res){
+function displayProducts() {
+    connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
-        console.table (res);
+        console.table(res);
         ask();
     });
 }
 
-function ask(){
+function ask() {
     inquirer.prompt([
         {
             name: "ID",
             type: "input",
             message: "Enter ID of the product you would like to purchase."
         }
-    ]).then (function (answer){
+    ]).then(function (answer) {
         console.log(answer.ID);
-        var item = connection.query('SELECT * FROM products WHERE id= ?', [answer.ID], function (err, res) {
+        var item = connection.query('SELECT * FROM products WHERE item_id= ?', [answer.ID], function (err, res) {
             if (err) throw err;
             console.table(res);
-            howMany(res);
-    })
-});
-}
+            quantity(res);
+        })
+    });
 
+};
+
+function quantity(res) {
+    inquirer.prompt ([
+        {
+            name: "QTY",
+            type: "input",
+            message: "Enter desired quantity"
+        }
+    ]).then (function(answer){
+        console.log(answer.QTY);
+
+    })
+}
 
