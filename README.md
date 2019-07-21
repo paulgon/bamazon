@@ -27,3 +27,6 @@ If not, the app should log a phrase like Insufficient quantity!, and then preven
 
 Update the SQL database to reflect the remaining quantity.
 Once the update goes through, show the customer the total cost of their purchase.
+
+## Images
+
