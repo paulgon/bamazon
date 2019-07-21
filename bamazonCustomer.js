@@ -60,7 +60,11 @@ function quantity(res) {
             displayProducts();
             return;
         }
-        connection.query("")
+        connection.query("update products set ? where ?",
+            [{ stock_quantity: total }, { id: res[0].id }],
+            function () {
+                displayProducts();
+            })
     })
 }
 
